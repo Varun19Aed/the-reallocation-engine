@@ -1,8 +1,8 @@
-# 2026FA Run — varun-Tad — Frontend / Full-Stack Sponsorship Triage
+# 2026FA Run — Varun19Aed — Frontend / Full-Stack Sponsorship Triage
 
 ## Scope
 
-Sample run of the `varun-Tad-frontend-triage` contribution using local historical sponsorship evidence, existing repository scorer/ATS tools, and one real job-posting liveness check.
+Sample run of the `Varun19Aed-frontend-triage` contribution using local historical sponsorship evidence, existing repository scorer/ATS tools, and one real job-posting liveness check.
 
 ## Prototype
 
@@ -26,8 +26,8 @@ Evidence status: HISTORICAL_SPONSORSHIP_EVIDENCE_FOUND
 Outputs:
 
 ```text
-course/2026fa/submissions/varun-Tad/runs/a10-sample/agent-report.json
-course/2026fa/submissions/varun-Tad/runs/a10-sample/human-report.md
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/agent-report.json
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/human-report.md
 ```
 
 ## Offline tests

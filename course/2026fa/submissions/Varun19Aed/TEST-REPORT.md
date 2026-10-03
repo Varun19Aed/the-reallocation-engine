@@ -3,7 +3,7 @@
 ## Test environment
 
 - Repository: The Reallocation Engine
-- Contribution: `varun-Tad-frontend-triage`
+- Contribution: `Varun19Aed-frontend-triage`
 - Branch: `contrib/2026fa-varun-frontend-triage`
 - Prototype language: Python
 - Test framework: Python built-in `unittest`
@@ -38,7 +38,7 @@ Three manifest warnings were reported for existing repository ignore/private-pat
 Command:
 
 ```bash
-python3 -m unittest scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py -v
+python3 -m unittest scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py -v
 ```
 
 Observed result:
@@ -89,8 +89,8 @@ Evidence status: HISTORICAL_SPONSORSHIP_EVIDENCE_FOUND
 The run produced:
 
 ```text
-course/2026fa/submissions/varun-Tad/runs/a10-sample/agent-report.json
-course/2026fa/submissions/varun-Tad/runs/a10-sample/human-report.md
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/agent-report.json
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/human-report.md
 ```
 
 ## Deliberate break test
@@ -166,7 +166,7 @@ Command:
 ```bash
 npm run score -- \
   data/examples/ch11-roles.json \
-  --out-dir course/2026fa/submissions/varun-Tad/runs
+  --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 Observed:
@@ -315,7 +315,7 @@ Observed:
 ```text
 pii-scan: 1 finding(s) — see DATA_CONTRACT.md §Zero-Conditions
 
-[email] package-lock.json — i@izs.me
+[email] package-lock.json — an existing email-like string in package-lock.json
 ```
 
 The reported finding is in the repository's existing `package-lock.json`, not in a contribution file. `package-lock.json` was restored to the repository version and is not modified by this contribution.
@@ -327,7 +327,7 @@ The scan result is recorded rather than changing the repository dependency lockf
 Command:
 
 ```bash
-python3 -m unittest scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py -v
+python3 -m unittest scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py -v
 ```
 
 Observed:

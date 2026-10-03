@@ -40,10 +40,10 @@ Missing sponsorship fields are treated as unknown rather than as evidence that a
 ## Run From Repository Root
 
 ```bash
-python3 scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py \
+python3 scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py \
   --company "A10 Networks" \
   --role "Frontend Engineer" \
-  --out-dir course/2026fa/submissions/varun-Tad/runs/a10-sample
+  --out-dir course/2026fa/submissions/Varun19Aed/runs/a10-sample
 ```
 
 The command writes:
@@ -61,7 +61,7 @@ Run from the repository root:
 
 ```bash
 python3 -m unittest \
-  scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py \
+  scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py \
   -v
 ```
 

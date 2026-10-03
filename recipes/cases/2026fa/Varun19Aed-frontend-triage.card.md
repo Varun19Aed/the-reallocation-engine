@@ -1,7 +1,7 @@
 # Frontend / Full-Stack Sponsorship Triage — human card
 
 **Audience:** an international master's student deciding where to spend limited job-search time.  
-**Agent twin:** `recipes/cases/2026fa/varun-Tad-frontend-triage.md`
+**Agent twin:** `recipes/cases/2026fa/Varun19Aed-frontend-triage.md`
 
 ## Purpose
 
@@ -38,7 +38,7 @@ Historical sponsorship data:
 
 Prototype:
 
-`scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py`
+`scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py`
 
 Existing repository tools:
 
@@ -51,16 +51,16 @@ Existing repository tools:
 Historical sponsorship evidence lookup:
 
 ```bash
-python3 scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py \
+python3 scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py \
   --company "A10 Networks" \
   --role "Frontend Engineer" \
-  --out-dir course/2026fa/submissions/varun-Tad/runs/a10-sample
+  --out-dir course/2026fa/submissions/Varun19Aed/runs/a10-sample
 ```
 
 Offline tests:
 
 ```bash
-python3 -m unittest scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py -v
+python3 -m unittest scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py -v
 ```
 
 ATS sample scan:
@@ -80,7 +80,7 @@ Existing scorer verification:
 ```bash
 npm run score -- \
   data/examples/ch11-roles.json \
-  --out-dir course/2026fa/submissions/varun-Tad/runs
+  --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 ## What it produces

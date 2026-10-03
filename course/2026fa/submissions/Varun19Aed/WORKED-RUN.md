@@ -24,10 +24,10 @@ These are separate evidence checks and are not presented as evidence about the s
 Command:
 
 ```bash
-python3 scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py \
+python3 scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py \
   --company "A10 Networks" \
   --role "Frontend Engineer" \
-  --out-dir course/2026fa/submissions/varun-Tad/runs/a10-sample
+  --out-dir course/2026fa/submissions/Varun19Aed/runs/a10-sample
 ```
 
 Observed output:
@@ -53,8 +53,8 @@ Warning: Historical sponsorship evidence does not establish sponsorship for the 
 The prototype also wrote:
 
 ```text
-course/2026fa/submissions/varun-Tad/runs/a10-sample/agent-report.json
-course/2026fa/submissions/varun-Tad/runs/a10-sample/human-report.md
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/agent-report.json
+course/2026fa/submissions/Varun19Aed/runs/a10-sample/human-report.md
 ```
 
 ## 4. Evidence boundary
@@ -84,10 +84,10 @@ In particular, the historical approval rate of `96.36363636363636` was **not** c
 Command:
 
 ```bash
-python3 scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py \
+python3 scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py \
   --company '$AVY INC' \
   --role "Frontend Engineer" \
-  --out-dir course/2026fa/submissions/varun-Tad/runs/avy-sample
+  --out-dir course/2026fa/submissions/Varun19Aed/runs/avy-sample
 ```
 
 Observed behavior:
@@ -158,7 +158,7 @@ The code was moved into the correct execution scope and the successful tests wer
 Command:
 
 ```bash
-python3 -m unittest scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py -v
+python3 -m unittest scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py -v
 ```
 
 Observed output:
@@ -184,17 +184,17 @@ Command:
 ```bash
 npm run score -- \
   data/examples/ch11-roles.json \
-  --out-dir course/2026fa/submissions/varun-Tad/runs
+  --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 Observed output:
 
 ```text
 > the-reallocation-engine@1.0.0 score
-> node scripts/score/role-scorer.mjs data/examples/ch11-roles.json --out-dir course/2026fa/submissions/varun-Tad/runs
+> node scripts/score/role-scorer.mjs data/examples/ch11-roles.json --out-dir course/2026fa/submissions/Varun19Aed/runs
 
 ✓ scored 5 roles → Apply 2 · Consider 1 · Skip 2 (skip 40%)
-  course/2026fa/submissions/varun-Tad/runs/role-scores.json  +  course/2026fa/submissions/varun-Tad/runs/role-scores.md
+  course/2026fa/submissions/Varun19Aed/runs/role-scores.json  +  course/2026fa/submissions/Varun19Aed/runs/role-scores.md
 ```
 
 This verifies that the existing scorer runs successfully. It does not mean that the A10 evidence was passed into the scorer.

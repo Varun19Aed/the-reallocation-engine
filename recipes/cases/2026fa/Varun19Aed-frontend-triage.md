@@ -24,7 +24,7 @@ This recipe produces record-backed evidence and preserves unknowns rather than i
 
 **Lifecycle:** `RUNNABLE-SAMPLE`. The local prototype and offline tests run successfully, and existing repository scorer/ATS/liveness tools were exercised. This recipe does not claim live sponsorship verification.
 
-**Human twin:** `recipes/cases/2026fa/varun-Tad-frontend-triage.card.md`
+**Human twin:** `recipes/cases/2026fa/Varun19Aed-frontend-triage.card.md`
 
 ## Purpose
 
@@ -55,7 +55,7 @@ These fields are treated as historical `record` evidence.
 
 ### Contribution prototype
 
-`scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py`
+`scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py`
 
 It accepts a company name and target role, searches the repository CSV, and emits JSON and Markdown reports.
 
@@ -64,7 +64,7 @@ It accepts a company name and target role, searches the repository CSV, and emit
 Role scorer:
 
 ```bash
-npm run score -- data/examples/ch11-roles.json --out-dir course/2026fa/submissions/varun-Tad/runs
+npm run score -- data/examples/ch11-roles.json --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 ATS scanner:
@@ -96,10 +96,10 @@ npm run ats:liveness -- "<job-url>"
 From repository root:
 
 ```bash
-python3 scripts/contrib/2026fa/varun-Tad-frontend-triage/frontend_triage.py \
+python3 scripts/contrib/2026fa/Varun19Aed-frontend-triage/frontend_triage.py \
   --company "A10 Networks" \
   --role "Frontend Engineer" \
-  --out-dir course/2026fa/submissions/varun-Tad/runs/a10-sample
+  --out-dir course/2026fa/submissions/Varun19Aed/runs/a10-sample
 ```
 
 The prototype distinguishes:
@@ -129,7 +129,7 @@ The repository scorer was verified separately using:
 ```bash
 npm run score -- \
   data/examples/ch11-roles.json \
-  --out-dir course/2026fa/submissions/varun-Tad/runs
+  --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 The sample produced 2 Apply, 1 Consider, and 2 Skip decisions.
@@ -190,7 +190,7 @@ The human report contains the inputs, company match, historical evidence, eviden
 Offline fixture tests:
 
 ```bash
-python3 -m unittest scripts/contrib/2026fa/varun-Tad-frontend-triage/tests/test_frontend_triage.py -v
+python3 -m unittest scripts/contrib/2026fa/Varun19Aed-frontend-triage/tests/test_frontend_triage.py -v
 ```
 
 Expected tested behaviors:
@@ -207,7 +207,7 @@ npm run doctor
 npm run verify
 npm run ats:scan -- --dry-run
 npm run ats:liveness -- "<job-url>"
-npm run score -- data/examples/ch11-roles.json --out-dir course/2026fa/submissions/varun-Tad/runs
+npm run score -- data/examples/ch11-roles.json --out-dir course/2026fa/submissions/Varun19Aed/runs
 ```
 
 ## Stop conditions
@@ -240,11 +240,11 @@ A fabricated company name returned `COMPANY_NOT_FOUND` without inventing sponsor
 
 The assignment run is recorded at:
 
-`logs/runs/2026fa-varun-Tad-1.md`
+`logs/runs/2026fa-Varun19Aed-1.md`
 
 Worked-run and test documentation are stored under:
 
-`course/2026fa/submissions/varun-Tad/`
+`course/2026fa/submissions/Varun19Aed/`
 
 Do not log resumes, credentials, private application information, or other personal data.
 

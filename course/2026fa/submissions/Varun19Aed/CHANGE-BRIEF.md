@@ -59,7 +59,7 @@ The prototype will produce role evidence in the format expected by the existing 
 
 Create a prototype under:
 
-`scripts/contrib/2026fa/varun-Tad-frontend-triage/`
+`scripts/contrib/2026fa/Varun19Aed-frontend-triage/`
 
 The prototype will accept a company name and a target role as inputs. It will search the existing student employment targets CSV for the company and extract available sponsorship evidence.
 
