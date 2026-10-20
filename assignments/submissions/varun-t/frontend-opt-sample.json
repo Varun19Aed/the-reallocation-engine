@@ -1,0 +1,39 @@
+[
+  {
+    "role_id": "frontend-clear",
+    "company": "Fictional Company A",
+    "title": "Frontend Engineer",
+    "sponsorship": {"p": 0.9, "tier": "proven", "source": "synthetic-fixture"},
+    "fit": {"p": 0.85, "source": "synthetic-model-judgment"},
+    "role_quality": {"p": 0.8, "source": "synthetic-fixture"},
+    "liveness": {"factor": 1, "source": "synthetic-fixture"},
+    "timeline": {"factor": 1, "source": "synthetic-fixture"}
+  },
+  {
+    "role_id": "fullstack-closed",
+    "company": "Fictional Company B",
+    "title": "Full Stack Engineer",
+    "sponsorship": {"p": 0.95, "tier": "proven", "source": "synthetic-fixture"},
+    "fit": {"p": 0.9, "source": "synthetic-model-judgment"},
+    "liveness": {"factor": 0, "source": "synthetic-fixture"},
+    "timeline": {"factor": 1, "source": "synthetic-fixture"}
+  },
+  {
+    "role_id": "frontend-timeline",
+    "company": "Fictional Company C",
+    "title": "React Developer",
+    "sponsorship": {"p": 0.9, "tier": "proven", "source": "synthetic-fixture"},
+    "fit": {"p": 0.9, "source": "synthetic-model-judgment"},
+    "liveness": {"factor": 1, "source": "synthetic-fixture"},
+    "timeline": {"factor": 0, "source": "synthetic-fixture"}
+  },
+  {
+    "role_id": "frontend-uncertain",
+    "company": "Fictional Company D",
+    "title": "Frontend Engineer",
+    "sponsorship": {"p": 0.6, "tier": "likely", "source": "synthetic-fixture"},
+    "fit": {"p": 0.85, "source": "synthetic-model-judgment"},
+    "liveness": {"factor": 1, "source": "synthetic-fixture"},
+    "timeline": {"factor": 0.9, "source": "synthetic-fixture"}
+  }
+]

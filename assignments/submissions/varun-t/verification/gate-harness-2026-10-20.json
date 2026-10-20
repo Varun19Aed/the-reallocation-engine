@@ -1,0 +1,450 @@
+{
+  "_harness": "gate-behavior-harness",
+  "_target": "scripts/score/role-scorer.mjs",
+  "_chapters": [
+    11,
+    16
+  ],
+  "_fixture_provenance": "SYNTHETIC test vectors — see scripts/score/fixtures/gate-cases.json _provenance",
+  "_value_kinds": {
+    "script-output": "composite, vote_sum, gate_product, recommendation, reason — read verbatim from the scorer's emitted trace",
+    "fixture": "expected values — hand-derived in gate-cases.json, derivation in each case's `why` field",
+    "harness-count": "pass/fail tallies computed by this script"
+  },
+  "generated": "2026-10-20",
+  "result": "PASS",
+  "config_drift": [
+    {
+      "key": "weights.sponsorship",
+      "pass": true,
+      "expected": 0.35,
+      "actual": 0.35
+    },
+    {
+      "key": "weights.fit",
+      "pass": true,
+      "expected": 0.3,
+      "actual": 0.3
+    },
+    {
+      "key": "weights.role_quality",
+      "pass": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "key": "apply_threshold",
+      "pass": true,
+      "expected": 0.3,
+      "actual": 0.3
+    },
+    {
+      "key": "consider_floor",
+      "pass": true,
+      "expected": 0.2,
+      "actual": 0.2
+    },
+    {
+      "key": "gate_zero",
+      "pass": true,
+      "expected": 0.05,
+      "actual": 0.05
+    }
+  ],
+  "baseline": [
+    {
+      "case_id": "G1-liveness-zero-with-maximal-votes",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0",
+          "actual": "0"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "reason_contains",
+          "pass": true,
+          "expected": "reason includes \"gated\"",
+          "actual": "gated: liveness ≈ 0.000 (a closed gate zeroes the composite regardless of votes)"
+        }
+      ],
+      "observed": {
+        "composite": 0,
+        "recommendation": "Skip",
+        "reason": "gated: liveness ≈ 0.000 (a closed gate zeroes the composite regardless of votes)",
+        "vote_sum": 0.65,
+        "gate_product": 0
+      }
+    },
+    {
+      "case_id": "G2-timeline-zero-with-maximal-votes",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0",
+          "actual": "0"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "reason_contains",
+          "pass": true,
+          "expected": "reason includes \"gated\"",
+          "actual": "gated: timeline ≈ 0.000 (a closed gate zeroes the composite regardless of votes)"
+        }
+      ],
+      "observed": {
+        "composite": 0,
+        "recommendation": "Skip",
+        "reason": "gated: timeline ≈ 0.000 (a closed gate zeroes the composite regardless of votes)",
+        "vote_sum": 0.65,
+        "gate_product": 0
+      }
+    },
+    {
+      "case_id": "G3-gate-boundary-at-threshold",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.0325",
+          "actual": "0.0325"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "reason_contains",
+          "pass": true,
+          "expected": "reason includes \"gated\"",
+          "actual": "gated: liveness ≈ 0.050 (a closed gate zeroes the composite regardless of votes)"
+        }
+      ],
+      "observed": {
+        "composite": 0.0325,
+        "recommendation": "Skip",
+        "reason": "gated: liveness ≈ 0.050 (a closed gate zeroes the composite regardless of votes)",
+        "vote_sum": 0.65,
+        "gate_product": 0.05
+      }
+    },
+    {
+      "case_id": "G4-gate-boundary-just-above-threshold",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.039",
+          "actual": "0.039"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "reason_excludes",
+          "pass": true,
+          "expected": "reason excludes \"gated\"",
+          "actual": "composite 0.039 < 0.2 — time is better spent elsewhere"
+        }
+      ],
+      "observed": {
+        "composite": 0.039,
+        "recommendation": "Skip",
+        "reason": "composite 0.039 < 0.2 — time is better spent elsewhere",
+        "vote_sum": 0.65,
+        "gate_product": 0.06
+      }
+    },
+    {
+      "case_id": "G5-two-partial-gates-multiply",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.1625",
+          "actual": "0.1625"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "reason_excludes",
+          "pass": true,
+          "expected": "reason excludes \"gated\"",
+          "actual": "composite 0.162 < 0.2 — time is better spent elsewhere"
+        }
+      ],
+      "observed": {
+        "composite": 0.1625,
+        "recommendation": "Skip",
+        "reason": "composite 0.162 < 0.2 — time is better spent elsewhere",
+        "vote_sum": 0.65,
+        "gate_product": 0.25
+      }
+    },
+    {
+      "case_id": "G6-healthy-gates-strong-votes-apply",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.555",
+          "actual": "0.555"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Apply",
+          "actual": "Apply"
+        },
+        {
+          "name": "reason_excludes",
+          "pass": true,
+          "expected": "reason excludes \"gated\"",
+          "actual": "composite 0.555 ≥ 0.3, gates healthy"
+        }
+      ],
+      "observed": {
+        "composite": 0.555,
+        "recommendation": "Apply",
+        "reason": "composite 0.555 ≥ 0.3, gates healthy",
+        "vote_sum": 0.555,
+        "gate_product": 1
+      }
+    },
+    {
+      "case_id": "G7-soft-timeline-demotes-apply-to-consider",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.3053",
+          "actual": "0.3052"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Consider",
+          "actual": "Consider"
+        },
+        {
+          "name": "reason_contains",
+          "pass": true,
+          "expected": "reason includes \"soft spot\"",
+          "actual": "above threshold (0.305) but one soft spot: timeline 0.550"
+        }
+      ],
+      "observed": {
+        "composite": 0.3052,
+        "recommendation": "Consider",
+        "reason": "above threshold (0.305) but one soft spot: timeline 0.550",
+        "vote_sum": 0.555,
+        "gate_product": 0.55
+      }
+    },
+    {
+      "case_id": "G8-override-without-reason-is-ignored",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.065",
+          "actual": "0.065"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Skip",
+          "actual": "Skip"
+        },
+        {
+          "name": "override_warning_present",
+          "pass": true,
+          "expected": "true",
+          "actual": "true"
+        }
+      ],
+      "observed": {
+        "composite": 0.065,
+        "recommendation": "Skip",
+        "reason": "composite 0.065 < 0.2 — time is better spent elsewhere",
+        "vote_sum": 0.065,
+        "gate_product": 1
+      }
+    },
+    {
+      "case_id": "G9a-role-quality-absent",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.325",
+          "actual": "0.325"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Apply",
+          "actual": "Apply"
+        }
+      ],
+      "observed": {
+        "composite": 0.325,
+        "recommendation": "Apply",
+        "reason": "composite 0.325 ≥ 0.3, gates healthy",
+        "vote_sum": 0.325,
+        "gate_product": 1
+      }
+    },
+    {
+      "case_id": "G9b-role-quality-maximal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "composite",
+          "pass": true,
+          "expected": "0.325",
+          "actual": "0.325"
+        },
+        {
+          "name": "recommendation",
+          "pass": true,
+          "expected": "Apply",
+          "actual": "Apply"
+        }
+      ],
+      "observed": {
+        "composite": 0.325,
+        "recommendation": "Apply",
+        "reason": "composite 0.325 ≥ 0.3, gates healthy",
+        "vote_sum": 0.325,
+        "gate_product": 1
+      }
+    }
+  ],
+  "structural": [
+    {
+      "name": "arithmetic-identity",
+      "pass": true,
+      "detail": "composite == vote_sum x gate_product (tol 0.001) for 10/10 cases",
+      "offenders": []
+    },
+    {
+      "name": "trace-source-labels",
+      "pass": true,
+      "detail": "every vote and both gates carry a source label for 10/10 cases",
+      "offenders": []
+    },
+    {
+      "name": "both-gates-present",
+      "pass": true,
+      "detail": "liveness and timeline both appear as gates in 10/10 cases",
+      "offenders": []
+    }
+  ],
+  "paired": [
+    {
+      "check_id": "P1-role-quality-inert",
+      "relation": "composite_equal",
+      "holds": true,
+      "severity": "warn",
+      "a": 0.325,
+      "b": 0.325,
+      "means": "role_quality p moved 0.0 -> 1.0 with no change to the composite. This is expected while weights.role_quality = 0.0, and is the open authorial decision recorded in DOMAIN.md gap 3 — not a code defect. Reported so it cannot be forgotten."
+    }
+  ],
+  "negative_control": {
+    "valid": true,
+    "applied": [
+      {
+        "name": "gates-become-additive-votes",
+        "find": "const composite = voteSum * gateProduct;",
+        "replace": "const composite = voteSum + (liveness * 0.20) + (timeline * 0.15);",
+        "matched": true
+      },
+      {
+        "name": "closed-gate-branch-removed",
+        "find": "const closedGate = gates.find((g) => g.factor <= CONFIG.gate_zero);",
+        "replace": "const closedGate = null;",
+        "matched": true
+      }
+    ],
+    "caught": [
+      {
+        "case_id": "G1-liveness-zero-with-maximal-votes",
+        "baseline_passed": true,
+        "mutant_failed": true,
+        "mutant_observed": {
+          "composite": 0.8,
+          "recommendation": "Apply"
+        }
+      },
+      {
+        "case_id": "G2-timeline-zero-with-maximal-votes",
+        "baseline_passed": true,
+        "mutant_failed": true,
+        "mutant_observed": {
+          "composite": 0.85,
+          "recommendation": "Consider"
+        }
+      },
+      {
+        "case_id": "G3-gate-boundary-at-threshold",
+        "baseline_passed": true,
+        "mutant_failed": true,
+        "mutant_observed": {
+          "composite": 0.81,
+          "recommendation": "Apply"
+        }
+      },
+      {
+        "case_id": "G4-gate-boundary-just-above-threshold",
+        "baseline_passed": true,
+        "mutant_failed": true,
+        "mutant_observed": {
+          "composite": 0.812,
+          "recommendation": "Apply"
+        }
+      },
+      {
+        "case_id": "G5-two-partial-gates-multiply",
+        "baseline_passed": true,
+        "mutant_failed": true,
+        "mutant_observed": {
+          "composite": 0.825,
+          "recommendation": "Consider"
+        }
+      }
+    ],
+    "missed": []
+  }
+}
